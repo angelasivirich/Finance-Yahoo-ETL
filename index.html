@@ -39,14 +39,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <i class="fa fa-remove"></i>
   </a>
   <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Gold stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Loblaws stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Peloton stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Netflix stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Amazon stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Uber stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Oil stock data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Air Canada stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/GC%3DF/history?p=GC%3DF">Gold stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/L.to/history?p=L.to">Loblaws stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/Pton/history?p=Pton">Peloton stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/NFLX/history?p=NFLX">Netflix stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/amzn/history?p=amzn">Amazon stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/UBER/history?p=UBER">Uber stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/CL%3DF/history?p=CL%3DF">Oil stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/ac.to/history?p=ac.to">Air Canada stock data</a>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -57,40 +57,31 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h1 class="w3-text-teal">Stock data Analysis</h1>
+      <p>Firstly, we decided to focus on a few (7) stocks that we suspected would be impacted by the Covid-19 pandemic.
+      </p>
     </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
+
   </div>
 
   <div class="w3-row">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+      <h1 class="w3-text-teal">Our Process</h1>
+      <p>
+        <ul>
+            <li>
+                Step 1: Find websites containing the necessary information( Yahoo Finance, WHO, Bank of Canada).
+            </li>
+            <li>
+                Step 2: Create a script to iterate through the website and scrape the raw data. <a href="#"> See here</a>
+            </li>
+            <li>
+                Step 3: Clean the data using pandas on jupyter notebook.
+            </li>
+        </ul>
+      </p>
     </div>
   </div>
-
   <!-- Pagination -->
   <div class="w3-center w3-padding-32">
     <div class="w3-bar">
@@ -105,11 +96,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>Footer</h4>
+      <h4>Data Analysis Brought to you by Team META-B </h4>
     </div>
 
     <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <p> Made possible thanks to: Maury, Emily,Tajudeen,Angela & Braden  </p>
     </div>
   </footer>
 
