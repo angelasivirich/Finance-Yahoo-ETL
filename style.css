@@ -30,7 +30,9 @@
  
  img{
      size: 50%;
-     padding-top: 30px;
-     padding-bottom: 30px;
-     display: inline-block;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     display: inline;
+     border= "solid"
+     
  }
