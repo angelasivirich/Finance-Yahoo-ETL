@@ -29,4 +29,11 @@
     
 .button1 {background-color: teal;text-decoration: white; } 
  
- 
+ img{
+     size: 100%;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     padding-top: 30px;
+     padding-bottom: 30px;
+ }
