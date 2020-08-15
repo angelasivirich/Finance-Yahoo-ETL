@@ -64,25 +64,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/ac.to/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Air Canada stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://www.bankofcanada.ca/valet/docs#valet_api">Bank of Canada exchange rate</a>
 
-</nav>
+
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
+</nav>
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 
 
 <div class="w3-main" style="margin-left:250px">
-
   <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
       <h4 class="w3-text-teal">Web Scraper!</h4>
       <p><button class="button button1" href="/scrape" >Click to Scrape!</button>>
       </p>
-    
-
-    <div class="w3-main" style="margin-left:250px">
-        <div class="w3-row w3-padding-64">
-
           <h2>Covid Finance data</h2>
           <hr>
           {{covid_finance.BOC | safe}}
