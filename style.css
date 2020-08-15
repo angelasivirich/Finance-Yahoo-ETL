@@ -10,3 +10,6 @@
   .nav-link:hover{
     background-color:#E7E7E7 ;
    }
+   tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
