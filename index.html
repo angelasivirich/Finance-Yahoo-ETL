@@ -7,14 +7,16 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
-  z-index: 3;
-  width: 250px;
-  top: 43px;
-  bottom: 0;
-  height: inherit;
+    z-index: 3;
+    width: 250px;
+    top: 43px;
+    bottom: 0;
+    height: inherit;
 }
 </style>
 <body>
@@ -23,13 +25,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Logo</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>
+    <a href="https://github.com/M-Agami/META-B-ETL" class="w3-bar-item w3-button w3-theme-l1">META-B ETL Repository</a>
+    <a href="https://github.com/M-Agami/META-B" class="w3-bar-item w3-button w3-hide-small w3-hover-white">META-B Covid-19 Analysis Repository</a>
   </div>
 </div>
 
@@ -38,7 +35,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
     <i class="fa fa-remove"></i>
   </a>
-  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <h4 class="w3-bar-item"><b>Stock Recources</b></h4>
+
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/GC%3DF/history?p=GC%3DF">Gold stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/L.to/history?p=L.to">Loblaws stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/Pton/history?p=Pton">Peloton stock data</a>
@@ -47,6 +45,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/UBER/history?p=UBER">Uber stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/CL%3DF/history?p=CL%3DF">Oil stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/ac.to/history?p=ac.to">Air Canada stock data</a>
+<a class="w3-bar-item w3-button w3-hover-black" href="https://www.bankofcanada.ca/valet/docs#valet_api" ><b>Bank of Canada Source</b></h4>
+</a>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -59,6 +59,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Stock data Analysis</h1>
       <p>Firstly, we decided to focus on a few (7) stocks that we suspected would be impacted by the Covid-19 pandemic.
+          We chose Amazon, Air Canada, Gold, Loblaws, Netflix, Oil, and Peloton as pur focus group. We expected an increase in Amazon,
+          Loblaws, Netflix, Gold, and Peloton, and a decrease in Air Canada, Uber, and Oil as a result of the quarantine. 
+          Our data scraping confirmed our suspicions when we looked at the overall percentage change with the exception of Uber.
+          Uber stocks maintained pretty steady to our surpise. 
       </p>
     </div>
 
@@ -67,32 +71,35 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Our Process</h1>
-      <p>
-        <ul>
+      <p> Recreate our Analysis with these simple steps:
+        <ol>
             <li>
-                Step 1: Find websites containing the necessary information( Yahoo Finance, WHO, Bank of Canada).
+                Find websites containing the necessary information(Yahoo Finance, WHO, Bank of Canada).
             </li>
             <li>
-                Step 2: Create a script to iterate through the website and scrape the raw data. <a href="#"> See here</a>
+                Extract csv files fro WHO website and create a script to iterate through the website and scrape the raw data. <a href="#"> See here</a>
             </li>
             <li>
-                Step 3: Clean the data using pandas on jupyter notebook.
+                Clean the data using pandas on jupyter notebook and convert USD to CAD using exchange rate data from the Bank of Canada.
             </li>
-        </ul>
+            <li>
+                Combine the dataframes.
+            </li>
+            <li>
+                Connect to PostgreSQL and push the tables into SQL (making sure your table parameters meet the criteria you'll entering).
+            </li>
+            <li>
+                Create a relationship model for your SQL database
+            </li>
+        </ol>
       </p>
     </div>
   </div>
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
+<!-- Pagination -->
+<div class="w3-center w3-padding-32">
     <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">»</a>
-    </div>
-  </div>
+      <a class="w3-button w3-black" href="localhost:5000/index.html">1</a>
+      <a class="w3-button w3-hover-black" href="localhost:5000/table.html">2</a>
 
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">

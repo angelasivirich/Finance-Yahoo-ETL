@@ -1,0 +1,12 @@
+.active, .dropdown-menu .dropdown-item:active a:hover{
+    background-color:#E7E7E7; 
+  }
+  .dropdown-item{
+    color: #6D8092 ; 
+  }
+  .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+    background-color:#E7E7E7 ; 
+  }
+  .nav-link:hover{
+    background-color:#E7E7E7 ;
+   }
