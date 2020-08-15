@@ -63,14 +63,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/CL%3DF/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Oil stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/ac.to/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Air Canada stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://www.bankofcanada.ca/valet/docs#valet_api">Bank of Canada exchange rate</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="covid_finance.html">Covid Finance data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="covid_cases.html">Covid Case data</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="covid_exchange.html">Covid exchange rate data</a>
-</nav>
+
+
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
+
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
@@ -78,18 +78,35 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h1 class="w3-text-teal">Web Scraper!</h1>
       <p><button class="button button1" href="/scrape" >Click to Scrape!</button>>
       </p>
-    </div>
+    
 
+    <div class="w3-main" style="margin-left:250px">
+        <div class="w3-row w3-padding-64">
+
+          <h2>Covid Finance data</h2>
+          <hr>
+          {{covid_finance.BOC | safe}}
+        </div>
+        <div class="w3-row w3-padding-64">
+          <h2>Covid Case data</h2>
+          <hr>
+          {{covid_finance.Covid_cases | safe}}
+        </div>
+        <div class="w3-row w3-padding-64">
+          <h2>Covid exchange rate data</h2>
+           <hr>
+           {{covid_finance.Stocks_hist | safe}}
+        </div>
+    </div>
   </div>
+
 
   
 <!-- Pagination -->
 <div class="w3-center w3-padding-32">
     <div class="w3-bar">
       <a class="w3-button w3-black" href="index.html">1</a>
-      <a class="w3-button w3-hover-black" href="covid_finance.html">2</a>
-      <a class="w3-button w3-hover-black" href="covid_cases.html">3</a>
-      <a class="w3-button w3-hover-black" href="covid_exchange.html">4</a>
+   
 
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">
