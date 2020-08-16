@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Financial Analysis</title>
+<title>Web Scraper</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,6 +19,22 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     height: inherit;
 }
 </style>
+<style>
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button1 {background-color: teal;text-decoration: white; } 
+ 
+    </style>
 <body>
 
 <!-- Navbar -->
@@ -48,60 +64,37 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/ac.to/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Air Canada stock data</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://www.bankofcanada.ca/valet/docs#valet_api">Bank of Canada exchange rate</a>
 
-</nav>
+
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
+</nav>
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
+
 <div class="w3-main" style="margin-left:250px">
-
   <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Stock data Analysis</h1>
-      <p>Firstly, we decided to focus on a few (7) stocks that we suspected would be impacted by the Covid-19 pandemic.
-          We chose Amazon, Air Canada, Gold, Loblaws, Netflix, Oil, and Peloton as pur focus group. We expected an increase in Amazon,
-          Loblaws, Netflix, Gold, and Peloton, and a decrease in Air Canada, Uber, and Oil as a result of the quarantine. 
-          Our data scraping confirmed our suspicions when we looked at the overall percentage change with the exception of Uber.
-          Uber stocks maintained pretty steady to our surpise. 
-          
+      <h3 class="w3-text-teal">Web Scraper!</h3>
+      <p><button class="button button1" href="/scrape" >Click to Scrape!</button>
       </p>
-      <p>
-        <img src="resources/yahoo1.png" alt="Stock plot">
-      </p>
-    </div>
-
-  </div>
-
-  <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Our Process</h1>
-      <p> Recreate our Analysis with these simple steps:
-        <ol>
-            <li>
-                Find websites containing the necessary information(Yahoo Finance, WHO, Bank of Canada).
-            </li>
-            <li>
-                Extract csv files from WHO website and echange rate using API. Create a script to iterate through the website and scrape the raw data. 
-            </li>
-            <li>
-                Clean the data using pandas on jupyter notebook and convert USD to CAD using exchange rate data from the Bank of Canada.
-            </li>
-            <li>
-                Combine the dataframes.
-            </li>
-            <li>
-                Connect to PostgreSQL and push the tables into SQL (making sure your table parameters meet the criteria you'll entering).
-            </li>
-            <li>
-                Create a relationship model for your SQL database : <img src="resources/relational-model.png" alt="relational - model" border= "solid">
-            </li>
-            <li>
-                OPTIONAL: Create a Flask app to automate the entire process!
-            </li>
-        </ol>
-      </p>
+          <h2>Covid Finance data</h2>
+          <hr>
+          {{covid_finance.BOC | safe}}
+        </div>
+        <div class="w3-row w3-padding-64">
+          <h2>Covid Case data</h2>
+          <hr>
+          {{covid_finance.Covid_cases | safe}}
+        </div>
+        <div class="w3-row w3-padding-64">
+          <h2>Covid exchange rate data</h2>
+           <hr>
+           {{covid_finance.Stocks_hist | safe}}
+        </div>
     </div>
   </div>
+
+
+  
 <!-- Pagination -->
 <div class="w3-center w3-padding-32">
     <div class="w3-bar">
@@ -152,6 +145,4 @@ function w3_close() {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
 </body>
-
 </html>
-
