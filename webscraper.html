@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Web Scraper</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+    z-index: 3;
+    width: 250px;
+    top: 43px;
+    bottom: 0;
+    height: inherit;
+}
+</style>
+<style>
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button1 {background-color: teal;text-decoration: white; } 
+ 
+    </style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="https://github.com/M-Agami/META-B-ETL" class="w3-bar-item w3-button w3-theme-l1">META-B ETL Repository</a>
+    <a href="https://github.com/M-Agami/META-B" class="w3-bar-item w3-button w3-hide-small w3-hover-white">META-B Covid-19 Analysis Repository</a>
+    <a href="webscraper.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><b>Scrape Data!</b></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b><u>Stock Recources</u></b></h4>
+
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/GC%3DF/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Gold stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/L.to/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Loblaws stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/Pton/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Peloton stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/NFLX/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Netflix stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/AMZN/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Amazon stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/UBER/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Uber stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/CL%3DF/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Oil stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://finance.yahoo.com/quote/ac.to/history?period1=1565827200&period2=1597276800&interval=1d&filter=history&frequency=1d">Air Canada stock data</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://www.bankofcanada.ca/valet/docs#valet_api">Bank of Canada exchange rate</a>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+</nav>
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
+
+<div class="w3-main" style="margin-left:250px">
+  <div class="w3-row w3-padding-64">
+      <h3 class="w3-text-teal">Web Scraper!</h3>
+      <p><button class="button button1" href="/scrape" >Click to Scrape!</button>
+      </p>
+          <h2>Covid Finance data</h2>
+          <hr>
+          {{covid_finance.BOC | safe}}
+        </div>
+        <div class="w3-row w3-padding-64">
+          <h2>Covid Case data</h2>
+          <hr>
+          {{covid_finance.Covid_cases | safe}}
+        </div>
+        <div class="w3-row w3-padding-64">
+          <h2>Covid exchange rate data</h2>
+           <hr>
+           {{covid_finance.Stocks_hist | safe}}
+        </div>
+    </div>
+  </div>
+
+
+  
+<!-- Pagination -->
+<div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="index.html">Home</a>
+    </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Data Analysis Brought to you by Team META-B </h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p> Made possible thanks to: Maury, Emily,Tajudeen,Angela & Braden  </p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+</body>
+</html>
